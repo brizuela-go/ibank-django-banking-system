@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "core",
     "transactions",
     "transfers",
+    "api",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
