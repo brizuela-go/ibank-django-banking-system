@@ -83,17 +83,17 @@ class DepositMoneyView(TransactionCreateMixin):
         amount = form.cleaned_data.get('amount')
         account = self.request.user.account
 
-        if not account.initial_deposit_date:
-            now = timezone.now()
-            next_interest_month = int(
-                12 / account.account_type.interest_calculation_per_year
-            )
-            account.initial_deposit_date = now
-            account.interest_start_date = (
-                now + relativedelta(
-                    months=+next_interest_month
-                )
-            )
+        # if not account.initial_deposit_date:
+        #     now = timezone.now()
+        #     next_interest_month = int(
+        #         12 / account.account_type.interest_calculation_per_year
+        #     )
+        #     account.initial_deposit_date = now
+        #     account.interest_start_date = (
+        #         now + relativedelta(
+        #             months=+next_interest_month
+        #         )
+        #     )
 
         account.balance += amount
         account.save(
