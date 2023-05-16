@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .forms import TransferForm
 from django.contrib import messages
 from .models import Transfer
+from django.views import View
 
 # Create your views here.
 
-class TransferView():
+class TransferView(View):
     
     def get(self, request, *args, **kwargs):
         form = TransferForm()

@@ -28,4 +28,5 @@ urlpatterns = [
         include('transactions.urls', namespace='transactions')
     ),
     path('api/', include('api.urls')),
+    path('transfers/', include('transfers.urls')),
 ]
